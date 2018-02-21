@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Currency" representedClassName=".Currency" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="decimals" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lastSelected" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="locale" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_de" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_es" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_fr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_ja" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_ko" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_pt_PT" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_sv" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_tr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_zh_Hans" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_zh_Hant" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rateFromUSD" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="symbol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="symbolPosition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="useCustomSymbol" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="useLocalization" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="useSymbol" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Currency" positionX="-63" positionY="-18" width="128" height="375"/>
+    </elements>
+</model>

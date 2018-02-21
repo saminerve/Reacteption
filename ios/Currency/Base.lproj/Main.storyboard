@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ConverterView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="Currency" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amQ-16-T8b" userLabel="Input Currency View">
+                                <rect key="frame" x="0.0" y="40" width="394" height="131"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-wP-zji" customClass="CurrencyButton" customModule="Currency">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="131"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="BhT-yY-h6E"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="JPY">
+                                            <color key="titleColor" red="0.58415377140045166" green="0.58426594734191895" blue="0.58413505554199219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeInputCurrency" id="yHF-dd-E4s"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muv-tM-atU">
+                                        <rect key="frame" x="74" y="0.0" width="320" height="131"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="68"/>
+                                        <state key="normal" title="¥0">
+                                            <color key="titleColor" red="0.15054340660572052" green="0.15057234466075897" blue="0.1505386084318161" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="CvM-8I-DFd" appends="YES" id="U0e-uc-q8h"/>
+                                            <outletCollection property="gestureRecognizers" destination="fYV-Ee-EWy" appends="YES" id="RJw-lx-5Km"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Jm-2k-5N4" userLabel="Input Activity Indicator">
+                                        <rect key="frame" x="56" y="55.666666666666671" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="dVx-wP-zji" firstAttribute="leading" secondItem="amQ-16-T8b" secondAttribute="leading" id="BLY-Aj-XWW"/>
+                                    <constraint firstItem="6Jm-2k-5N4" firstAttribute="centerY" secondItem="dVx-wP-zji" secondAttribute="centerY" id="Naz-jQ-4UB"/>
+                                    <constraint firstAttribute="bottom" secondItem="muv-tM-atU" secondAttribute="bottom" id="VYb-tb-eCm"/>
+                                    <constraint firstAttribute="trailing" secondItem="muv-tM-atU" secondAttribute="trailing" id="dST-e3-krz"/>
+                                    <constraint firstItem="dVx-wP-zji" firstAttribute="top" secondItem="amQ-16-T8b" secondAttribute="top" id="kb5-Ih-fKL"/>
+                                    <constraint firstItem="muv-tM-atU" firstAttribute="top" secondItem="amQ-16-T8b" secondAttribute="top" id="lGv-fI-d5v"/>
+                                    <constraint firstItem="muv-tM-atU" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" constant="10" id="spe-PP-JW2"/>
+                                    <constraint firstItem="muv-tM-atU" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" constant="10" id="toK-MC-bU2"/>
+                                    <constraint firstAttribute="bottom" secondItem="dVx-wP-zji" secondAttribute="bottom" id="via-gE-mb1"/>
+                                    <constraint firstItem="6Jm-2k-5N4" firstAttribute="leading" secondItem="amQ-16-T8b" secondAttribute="leading" constant="56" id="yhk-ri-RZo"/>
+                                </constraints>
+                            </view>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46j-rS-HdK" userLabel="Ouput Currency View">
+                                <rect key="frame" x="0.0" y="171" width="394" height="131"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-bv-Hha" customClass="CurrencyButton" customModule="Currency">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="131"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="UAb-Zg-zYX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="GBP">
+                                            <color key="titleColor" red="0.58415377140045166" green="0.58426594734191895" blue="0.58413505554199219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeOutputCurrency" id="epB-0k-ch1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXn-1B-zNv">
+                                        <rect key="frame" x="74" y="0.0" width="320" height="131"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="68"/>
+                                        <state key="normal" title="£0">
+                                            <color key="titleColor" red="0.64003586769104004" green="0.64015883207321167" blue="0.64001524448394775" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ouputCurrencyPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pdf-cN-KIO"/>
+                                            <outletCollection property="gestureRecognizers" destination="6Xo-w5-vdo" appends="YES" id="JV3-iV-nER"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Pvj-tD-Cw9" userLabel="Output Activity Indicator">
+                                        <rect key="frame" x="56" y="55.666666666666657" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="rXn-1B-zNv" firstAttribute="leading" secondItem="4nD-bv-Hha" secondAttribute="trailing" constant="10" id="AKJ-tI-ApW"/>
+                                    <constraint firstItem="rXn-1B-zNv" firstAttribute="leading" secondItem="4nD-bv-Hha" secondAttribute="trailing" constant="10" id="LG2-bc-qnL"/>
+                                    <constraint firstItem="Pvj-tD-Cw9" firstAttribute="centerY" secondItem="4nD-bv-Hha" secondAttribute="centerY" id="bpH-ac-u5d"/>
+                                    <constraint firstItem="rXn-1B-zNv" firstAttribute="top" secondItem="46j-rS-HdK" secondAttribute="top" id="fpN-WW-xCx"/>
+                                    <constraint firstItem="Pvj-tD-Cw9" firstAttribute="leading" secondItem="46j-rS-HdK" secondAttribute="leading" constant="56" id="hOQ-1O-zrK"/>
+                                    <constraint firstAttribute="bottom" secondItem="4nD-bv-Hha" secondAttribute="bottom" id="hmt-qY-xAs"/>
+                                    <constraint firstItem="4nD-bv-Hha" firstAttribute="top" secondItem="46j-rS-HdK" secondAttribute="top" id="ivj-Ad-GGR"/>
+                                    <constraint firstAttribute="trailing" secondItem="rXn-1B-zNv" secondAttribute="trailing" id="j2g-08-bA4"/>
+                                    <constraint firstItem="4nD-bv-Hha" firstAttribute="leading" secondItem="46j-rS-HdK" secondAttribute="leading" id="nY0-tY-5Di"/>
+                                    <constraint firstAttribute="bottom" secondItem="rXn-1B-zNv" secondAttribute="bottom" id="oEV-DP-pia"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ye-eY-h2D" userLabel="Input Indicator">
+                                <rect key="frame" x="396" y="72.666666666666657" width="4" height="64.999999999999972"/>
+                                <color key="backgroundColor" red="0.0" green="0.46274509803921571" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Mut-Jh-BWm"/>
+                                    <constraint firstAttribute="width" constant="4" id="PGL-mW-hhB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-XE-j1z" customClass="CalculatorKeypadView" customModule="Currency">
+                                <rect key="frame" x="0.0" y="322" width="414" height="414"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="115.66666666666669" y="16" width="83.333333333333314" height="83.666666666666686"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iZX-2T-ZeJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="215.00000000000003" y="16" width="83.666666666666714" height="83.666666666666686"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPZ-3z-0o4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="115.66666666666669" width="83.666666666666671" height="83.333333333333314"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hDI-Xu-ghW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="115.66666666666669" y="115.66666666666669" width="83.333333333333314" height="83.333333333333314"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="02u-pU-ucd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="215.00000000000003" y="115.66666666666669" width="83.666666666666714" height="83.333333333333314"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VC4-YW-HMa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="215" width="83.666666666666671" height="83.666666666666629"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yp-b8-b4J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="115.66666666666669" y="215" width="83.333333333333314" height="83.666666666666629"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lo4-1v-QSc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-TB-GgY" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="215.00000000000003" y="215" width="83.666666666666714" height="83.666666666666629"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wt5-W4-hQU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="115.66666666666669" y="314.66666666666663" width="83.333333333333314" height="83.333333333333371"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="513-Uw-PkC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="314.66666666666663" width="83.666666666666671" height="83.333333333333371"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title=".">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dotPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O07-Lr-vo2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" userLabel="Clear" customClass="CalculatorClearButton" customModule="Currency">
+                                        <rect key="frame" x="215.00000000000003" y="314.66666666666663" width="83.666666666666714" height="83.333333333333371"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.53805017471313477" green="0.53815340995788574" blue="0.53803282976150513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="buttonClearIcon.png">
+                                            <color key="titleColor" red="0.58422970771789551" green="0.5841909646987915" blue="0.58420157432556152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cev-yM-0dh"/>
+                                            <outletCollection property="gestureRecognizers" destination="UDK-Qq-hYp" appends="YES" id="3QF-cx-xPt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorSwitchButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="314.66666666666674" y="16" width="83.333333333333314" height="83.666666666666686"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="buttonSwitchIcon.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="switchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yem-lN-W3e"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" userLabel="+" customClass="CalculatorAddButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="314.66666666666674" y="115.66666666666669" width="83.333333333333314" height="83.333333333333314"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <state key="normal" image="buttonAddIcon.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qny-bA-am0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" userLabel="-" customClass="CalculatorSubtractButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="314.66666666666674" y="215" width="83.333333333333314" height="83.666666666666629"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <state key="normal" image="buttonSubtractIcon.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="minusPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YAU-7O-2Ve"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" userLabel="=" customClass="CalculatorResultButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="314.66666666666674" y="314.66666666666663" width="83.333333333333314" height="83.333333333333371"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <state key="normal" image="buttonResultIcon.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="equalsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHt-sn-Tq4"/>
+                                            <outletCollection property="gestureRecognizers" destination="zYS-Rm-9Dl" appends="YES" id="MNg-Ie-Bj5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="16" width="83.666666666666671" height="83.666666666666686"/>
+                                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                        <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Frj-k7-LPm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DJH-uF-R2A" firstAttribute="leading" secondItem="NLh-XE-j1z" secondAttribute="leading" constant="16" id="2AE-x6-y2V"/>
+                                    <constraint firstItem="yfa-A5-Xr1" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="2UD-3h-E1A"/>
+                                    <constraint firstItem="dWW-RI-d8f" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="33X-9u-lAm"/>
+                                    <constraint firstItem="Xcs-D8-JHK" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="36k-xQ-MBM"/>
+                                    <constraint firstItem="XDL-TB-GgY" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="3oI-Kv-NiT"/>
+                                    <constraint firstItem="DJH-uF-R2A" firstAttribute="top" secondItem="PUm-Pb-e64" secondAttribute="bottom" constant="16" id="5GQ-4U-D0v"/>
+                                    <constraint firstItem="XDL-TB-GgY" firstAttribute="leading" secondItem="a03-dZ-HOe" secondAttribute="trailing" constant="16" id="6D5-QQ-uHO"/>
+                                    <constraint firstItem="35e-qM-0gB" firstAttribute="leading" secondItem="yfa-A5-Xr1" secondAttribute="trailing" constant="16" id="7Dl-9Z-b98"/>
+                                    <constraint firstItem="4r1-uK-adB" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="8Az-A5-1Tj"/>
+                                    <constraint firstItem="aOt-1A-j4i" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="9LG-cb-yZ1"/>
+                                    <constraint firstAttribute="width" secondItem="NLh-XE-j1z" secondAttribute="height" multiplier="1:1" id="Ba7-gv-y9l"/>
+                                    <constraint firstItem="Xcs-D8-JHK" firstAttribute="top" secondItem="aOt-1A-j4i" secondAttribute="bottom" constant="16" id="C7Z-1L-3Pf"/>
+                                    <constraint firstItem="8vk-bG-bai" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="CVm-ln-cHF"/>
+                                    <constraint firstItem="YAk-yI-DGx" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="Dtn-F8-i5D"/>
+                                    <constraint firstItem="35e-qM-0gB" firstAttribute="top" secondItem="fVX-LE-xzS" secondAttribute="bottom" constant="16" id="EB5-ei-Uy7"/>
+                                    <constraint firstItem="1au-Bl-X2Q" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="GVf-v3-ZdW"/>
+                                    <constraint firstItem="XDL-TB-GgY" firstAttribute="top" secondItem="35e-qM-0gB" secondAttribute="bottom" constant="16" id="HXC-5C-OsN"/>
+                                    <constraint firstAttribute="bottom" secondItem="F8k-oV-4YX" secondAttribute="bottom" constant="16" id="Iax-0x-4Db"/>
+                                    <constraint firstItem="1au-Bl-X2Q" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="J1q-Hb-XUb"/>
+                                    <constraint firstItem="1au-Bl-X2Q" firstAttribute="leading" secondItem="F8k-oV-4YX" secondAttribute="trailing" constant="16" id="K2x-g0-FBt"/>
+                                    <constraint firstItem="F8k-oV-4YX" firstAttribute="leading" secondItem="NLh-XE-j1z" secondAttribute="leading" constant="16" id="L9O-3G-zmn"/>
+                                    <constraint firstItem="dWW-RI-d8f" firstAttribute="top" secondItem="4r1-uK-adB" secondAttribute="bottom" constant="16" id="MID-EY-tv8"/>
+                                    <constraint firstItem="35e-qM-0gB" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="MQ8-OB-GHG"/>
+                                    <constraint firstItem="1au-Bl-X2Q" firstAttribute="top" secondItem="a03-dZ-HOe" secondAttribute="bottom" constant="16" id="NA8-j5-4fS"/>
+                                    <constraint firstItem="DJH-uF-R2A" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="NCl-7t-qIA"/>
+                                    <constraint firstItem="4r1-uK-adB" firstAttribute="leading" secondItem="XDL-TB-GgY" secondAttribute="trailing" constant="16" id="NSy-Oh-WGx"/>
+                                    <constraint firstItem="fVX-LE-xzS" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="top" constant="16" id="Ntm-UB-IZB"/>
+                                    <constraint firstItem="8vk-bG-bai" firstAttribute="top" secondItem="DJH-uF-R2A" secondAttribute="bottom" constant="16" id="ODt-tv-Rmm"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xcs-D8-JHK" secondAttribute="trailing" constant="16" id="OFv-pr-ckB"/>
+                                    <constraint firstItem="aOt-1A-j4i" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="R3e-Bq-xpG"/>
+                                    <constraint firstItem="7ZW-lu-eYF" firstAttribute="leading" secondItem="1au-Bl-X2Q" secondAttribute="trailing" constant="16" id="T7G-gi-AxW"/>
+                                    <constraint firstItem="4r1-uK-adB" firstAttribute="top" secondItem="Xcs-D8-JHK" secondAttribute="bottom" constant="16" id="TTh-mi-Zr2"/>
+                                    <constraint firstItem="dWW-RI-d8f" firstAttribute="leading" secondItem="7ZW-lu-eYF" secondAttribute="trailing" constant="16" id="TVm-hj-MjX"/>
+                                    <constraint firstItem="dWW-RI-d8f" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="XZv-kq-s0q"/>
+                                    <constraint firstItem="fVX-LE-xzS" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="XsN-4R-dRN"/>
+                                    <constraint firstItem="Xcs-D8-JHK" firstAttribute="leading" secondItem="35e-qM-0gB" secondAttribute="trailing" constant="16" id="XuS-0x-7nJ"/>
+                                    <constraint firstItem="F8k-oV-4YX" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="Y2d-3U-oET"/>
+                                    <constraint firstItem="8vk-bG-bai" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="YHc-e3-I9p"/>
+                                    <constraint firstAttribute="bottom" secondItem="dWW-RI-d8f" secondAttribute="bottom" constant="16" id="YNA-Xe-mwX"/>
+                                    <constraint firstItem="XDL-TB-GgY" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="Yqb-NP-tas"/>
+                                    <constraint firstItem="7ZW-lu-eYF" firstAttribute="top" secondItem="XDL-TB-GgY" secondAttribute="bottom" constant="16" id="a1d-VD-anL"/>
+                                    <constraint firstItem="DJH-uF-R2A" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="a3m-Mf-k0j"/>
+                                    <constraint firstItem="yfa-A5-Xr1" firstAttribute="leading" secondItem="DJH-uF-R2A" secondAttribute="trailing" constant="16" id="a8j-Lu-qPx"/>
+                                    <constraint firstItem="35e-qM-0gB" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="anW-FH-ccD"/>
+                                    <constraint firstItem="a03-dZ-HOe" firstAttribute="leading" secondItem="8vk-bG-bai" secondAttribute="trailing" constant="16" id="atM-ro-jvn"/>
+                                    <constraint firstItem="yfa-A5-Xr1" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="b1Y-1R-6GN"/>
+                                    <constraint firstItem="a03-dZ-HOe" firstAttribute="top" secondItem="yfa-A5-Xr1" secondAttribute="bottom" constant="16" id="b9y-dR-3ME"/>
+                                    <constraint firstItem="F8k-oV-4YX" firstAttribute="top" secondItem="8vk-bG-bai" secondAttribute="bottom" constant="16" id="bJD-h1-ydP"/>
+                                    <constraint firstItem="YAk-yI-DGx" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="bOY-FA-NYK"/>
+                                    <constraint firstItem="PUm-Pb-e64" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="top" constant="16" id="dIv-NB-TAI"/>
+                                    <constraint firstItem="Xcs-D8-JHK" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="ezJ-R2-SNP"/>
+                                    <constraint firstItem="8vk-bG-bai" firstAttribute="leading" secondItem="NLh-XE-j1z" secondAttribute="leading" constant="16" id="gwH-3x-Cc1"/>
+                                    <constraint firstItem="a03-dZ-HOe" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="i5n-07-u8A"/>
+                                    <constraint firstItem="7ZW-lu-eYF" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="it6-Uj-X12"/>
+                                    <constraint firstItem="a03-dZ-HOe" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="jBA-tg-7PS"/>
+                                    <constraint firstAttribute="bottom" secondItem="1au-Bl-X2Q" secondAttribute="bottom" constant="16" id="ltt-8H-RkE"/>
+                                    <constraint firstItem="7ZW-lu-eYF" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="lxt-rH-kwD"/>
+                                    <constraint firstItem="aOt-1A-j4i" firstAttribute="leading" secondItem="fVX-LE-xzS" secondAttribute="trailing" constant="16" id="nEF-zf-MhU"/>
+                                    <constraint firstAttribute="trailing" secondItem="4r1-uK-adB" secondAttribute="trailing" constant="16" id="nLF-IV-gdn"/>
+                                    <constraint firstAttribute="trailing" secondItem="dWW-RI-d8f" secondAttribute="trailing" constant="16" id="ref-U6-b9V"/>
+                                    <constraint firstItem="aOt-1A-j4i" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="top" constant="16" id="sD7-Vc-7hu"/>
+                                    <constraint firstItem="fVX-LE-xzS" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="tW2-aH-Kig"/>
+                                    <constraint firstItem="F8k-oV-4YX" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="trm-iz-g7P"/>
+                                    <constraint firstItem="YAk-yI-DGx" firstAttribute="leading" secondItem="PUm-Pb-e64" secondAttribute="trailing" constant="16" id="uYS-BE-DKj"/>
+                                    <constraint firstItem="yfa-A5-Xr1" firstAttribute="top" secondItem="YAk-yI-DGx" secondAttribute="bottom" constant="16" id="ueR-Yv-Lb0"/>
+                                    <constraint firstAttribute="bottom" secondItem="7ZW-lu-eYF" secondAttribute="bottom" constant="16" id="us4-Tf-xDx"/>
+                                    <constraint firstAttribute="trailing" secondItem="aOt-1A-j4i" secondAttribute="trailing" constant="16" id="wCZ-sE-IQ7"/>
+                                    <constraint firstItem="4r1-uK-adB" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="wNe-At-NCP"/>
+                                    <constraint firstItem="YAk-yI-DGx" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="top" constant="16" id="xGY-kA-Ghu"/>
+                                    <constraint firstItem="PUm-Pb-e64" firstAttribute="leading" secondItem="NLh-XE-j1z" secondAttribute="leading" constant="16" id="y1V-YH-1tZ"/>
+                                    <constraint firstItem="fVX-LE-xzS" firstAttribute="leading" secondItem="YAk-yI-DGx" secondAttribute="trailing" constant="16" id="y7s-Hf-mUC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="bottom" id="2F8-xy-3SL"/>
+                            <constraint firstItem="4ye-eY-h2D" firstAttribute="centerY" secondItem="amQ-16-T8b" secondAttribute="centerY" priority="750" id="7yC-fG-zvX"/>
+                            <constraint firstItem="46j-rS-HdK" firstAttribute="top" secondItem="amQ-16-T8b" secondAttribute="bottom" id="9Yk-SB-hX6"/>
+                            <constraint firstItem="amQ-16-T8b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="DF7-uv-t0P"/>
+                            <constraint firstItem="46j-rS-HdK" firstAttribute="height" secondItem="amQ-16-T8b" secondAttribute="height" id="DxM-Jf-QoJ"/>
+                            <constraint firstItem="46j-rS-HdK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EPU-Ze-cJg"/>
+                            <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="46j-rS-HdK" secondAttribute="bottom" constant="20" id="RwC-3g-8pL"/>
+                            <constraint firstItem="46j-rS-HdK" firstAttribute="width" secondItem="amQ-16-T8b" secondAttribute="width" id="V03-ki-Wix"/>
+                            <constraint firstAttribute="trailing" secondItem="4ye-eY-h2D" secondAttribute="trailing" constant="14" id="Z1i-pA-9oh"/>
+                            <constraint firstAttribute="trailing" secondItem="NLh-XE-j1z" secondAttribute="trailing" id="aGV-LK-gmQ"/>
+                            <constraint firstItem="amQ-16-T8b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dXR-xX-pxs"/>
+                            <constraint firstItem="46j-rS-HdK" firstAttribute="top" secondItem="amQ-16-T8b" secondAttribute="bottom" id="ds1-oa-zuU"/>
+                            <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="46j-rS-HdK" secondAttribute="bottom" constant="20" id="e1Z-iN-kjF"/>
+                            <constraint firstItem="4ye-eY-h2D" firstAttribute="leading" secondItem="amQ-16-T8b" secondAttribute="trailing" constant="2" id="jLb-Gl-95j"/>
+                            <constraint firstItem="4ye-eY-h2D" firstAttribute="leading" secondItem="amQ-16-T8b" secondAttribute="trailing" constant="2" id="oLH-o5-6Bd"/>
+                            <constraint firstItem="NLh-XE-j1z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="odH-gB-1jv"/>
+                            <constraint firstAttribute="trailing" secondItem="46j-rS-HdK" secondAttribute="trailing" constant="20" id="uDp-sq-4ra"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="Xcs-D8-JHK" id="nLb-LY-Ykf"/>
+                        <outlet property="equalsButton" destination="dWW-RI-d8f" id="PG9-VW-zau"/>
+                        <outlet property="inputActivityIndicator" destination="6Jm-2k-5N4" id="aBU-LT-ZBD"/>
+                        <outlet property="inputCurrency" destination="muv-tM-atU" id="TbY-SG-j65"/>
+                        <outlet property="inputCurrencyCodeButton" destination="dVx-wP-zji" id="2PI-eC-7qc"/>
+                        <outlet property="inputCurrencyContainer" destination="amQ-16-T8b" id="4Xx-VG-eYL"/>
+                        <outlet property="inputIndicator" destination="4ye-eY-h2D" id="nSg-dp-Rdn"/>
+                        <outlet property="minusButton" destination="4r1-uK-adB" id="cvc-SM-RQw"/>
+                        <outlet property="outputActivityIndicator" destination="Pvj-tD-Cw9" id="jMK-Fk-NdQ"/>
+                        <outlet property="outputCurrency" destination="rXn-1B-zNv" id="9CD-Of-61e"/>
+                        <outlet property="outputCurrencyCodeButton" destination="4nD-bv-Hha" id="PbD-sb-ABr"/>
+                        <outlet property="outputCurrencyContainer" destination="46j-rS-HdK" id="9x5-PJ-sIU"/>
+                        <outlet property="switchButton" destination="aOt-1A-j4i" id="9LZ-er-PRc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="zYS-Rm-9Dl" userLabel="Long Press on Equals Button">
+                    <connections>
+                        <action selector="longPressedEquals:" destination="BYZ-38-t0r" id="mQd-tK-ajZ"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="CvM-8I-DFd" userLabel="Long Press on Input Currency">
+                    <connections>
+                        <action selector="longPressedInput:" destination="BYZ-38-t0r" id="aRH-N8-pjT"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6Xo-w5-vdo" userLabel="Long Press on Output Currency">
+                    <connections>
+                        <action selector="longPressedOutput:" destination="BYZ-38-t0r" id="QX4-Uf-V8i"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="UDK-Qq-hYp" userLabel="Long Press on Clear Button">
+                    <connections>
+                        <action selector="longPressedClear:" destination="BYZ-38-t0r" id="Iej-7p-PSy"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="fYV-Ee-EWy" userLabel="Swipe on Input Currency">
+                    <connections>
+                        <action selector="swipedInput:" destination="BYZ-38-t0r" id="4Xw-8Z-Ymx"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="357.60000000000002" y="95.802098950524751"/>
+        </scene>
+        <!--Change Currency-->
+        <scene sceneID="pOo-EA-Pxe">
+            <objects>
+                <viewController id="Gga-26-1cy" customClass="ChangeCurrencyViewController" customModule="Currency" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3qz-7c-EoR"/>
+                        <viewControllerLayoutGuide type="bottom" id="dg3-2g-E8C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="StB-6j-ag4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="P8b-Bl-AQo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Currencies" id="CZV-23-ufX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Gga-26-1cy" id="2dR-Fj-fag"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" editingAccessoryType="checkmark" textLabel="9qf-Ta-xvN" detailTextLabel="Zjl-ce-ePH" rowHeight="84" style="IBUITableViewCellStyleSubtitle" id="7r5-xP-kk4">
+                                        <rect key="frame" x="0.0" y="99.333333333333343" width="414" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7r5-xP-kk4" id="KeT-OW-NtB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="83.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9qf-Ta-xvN">
+                                                    <rect key="frame" x="15.000000000000002" y="21.333333333333336" width="31.666666666666668" height="19.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zjl-ce-ePH">
+                                                    <rect key="frame" x="14.999999999999996" y="43.333333333333329" width="49.666666666666664" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.51589071750640869" green="0.51598978042602539" blue="0.51587420701980591" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="18" left="8" bottom="18" right="8"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gga-26-1cy" id="0IC-Ty-Hb0"/>
+                                    <outlet property="delegate" destination="Gga-26-1cy" id="fXg-am-bNG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="P8b-Bl-AQo" firstAttribute="leading" secondItem="StB-6j-ag4" secondAttribute="leading" id="YMg-hv-ngY"/>
+                            <constraint firstItem="P8b-Bl-AQo" firstAttribute="top" secondItem="StB-6j-ag4" secondAttribute="top" id="kL7-d3-t7j"/>
+                            <constraint firstAttribute="trailing" secondItem="P8b-Bl-AQo" secondAttribute="trailing" id="y8x-H4-TzX"/>
+                            <constraint firstItem="dg3-2g-E8C" firstAttribute="top" secondItem="P8b-Bl-AQo" secondAttribute="bottom" id="yCg-uQ-xxa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change Currency" id="3Na-n4-bDO">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="XKg-x9-1w8">
+                            <attributedString key="userComments">
+                                <fragment content="Button to dismiss change currency view">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="Gga-26-1cy" id="3Ng-LF-ETL"/>
+                            </connections>
+                        </barButtonItem>
+                        <attributedString key="userComments">
+                            <fragment content="Title for the change currency title">
+                                <attributes>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Voo-x0-JhT" id="X38-YO-hgX"/>
+                        <outlet property="tableView" destination="P8b-Bl-AQo" id="QVP-m1-Oxf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3P-Sz-mgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Voo-x0-JhT">
+                    <connections>
+                        <outlet property="delegate" destination="Gga-26-1cy" id="zgz-23-dbx"/>
+                        <outlet property="searchBar" destination="CZV-23-ufX" id="C8s-Jw-ufy"/>
+                        <outlet property="searchContentsController" destination="Gga-26-1cy" id="K2R-sx-WsD"/>
+                        <outlet property="searchResultsDataSource" destination="Gga-26-1cy" id="oOA-Ni-Xdj"/>
+                        <outlet property="searchResultsDelegate" destination="Gga-26-1cy" id="lec-aI-3yU"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1100" y="937"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oC3-ds-aOi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pFU-Zi-pwq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EYs-YC-Tob">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gga-26-1cy" kind="relationship" relationship="rootViewController" id="7qw-q1-6IK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLr-pf-4lw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="359" y="937"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buttonAddIcon.png" width="20" height="20"/>
+        <image name="buttonClearIcon.png" width="48" height="29"/>
+        <image name="buttonResultIcon.png" width="20" height="10"/>
+        <image name="buttonSubtractIcon.png" width="20" height="2"/>
+        <image name="buttonSwitchIcon.png" width="33" height="24"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yHF-dd-E4s"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.13422322273254395" green="0.45271384716033936" blue="0.82346940040588379" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>

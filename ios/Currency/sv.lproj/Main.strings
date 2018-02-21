@@ -1,0 +1,5 @@
+/* Class = "UINavigationItem"; title = "Change Currency"; ObjectID = "3Na-n4-bDO"; */
+"3Na-n4-bDO.title" = "Ändra Valuta";
+
+/* Class = "UISearchBar"; placeholder = "Currencies"; ObjectID = "CZV-23-ufX"; */
+"CZV-23-ufX.placeholder" = "Valutor";

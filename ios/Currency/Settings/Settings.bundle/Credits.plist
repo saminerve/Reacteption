@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Credits</string>
+	<key>StringsTable</key>
+	<string>Credits</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Credits</string>
+			<key>FooterText</key>
+			<string>Design and development by Nuno Coelho Santos, @nunosans on Twitter.</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Special Thanks</string>
+			<key>FooterText</key>
+			<string>Thanks to Johnny Linnert for organising the Command Swift workshops in Tokyo, which got me interested in Swift and kept me motivated to learn. Thanks to Jonathon Toon for all the help getting started with developing for iOS and for the request to build this app. Thank you Slim Ewies, Simon Schmid, Xin Nie, Asuka Yamashita, Alex Abian, Honey Chang, Jack Veiga, Daniel Stenberg, Tolga Kilinc, Visien Vinesa for the work on translating this app.</string>
+		</dict>
+	</array>
+</dict>
+</plist>
