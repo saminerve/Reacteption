@@ -11,4 +11,9 @@
       android:icon="@drawable/ic_whatshot_black_24dp"
       android:title="@string/title_dashboard"/>
 
+  <item
+      android:id="@+id/navigation_help"
+      android:icon="@drawable/ic_help_circle"
+      android:title="@string/title_help"/>
+
 </menu>

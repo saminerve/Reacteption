@@ -70,5 +70,5 @@ dependencies {
   compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
   compile 'io.reactivex.rxjava2:rxjava:2.1.5'
 
-  implementation "com.facebook.react:react-native:0.20.1"
+  implementation "com.facebook.react:react-native:0.53.3"
 }

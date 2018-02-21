@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppRegistry, StyleSheet, Text, View} from 'react-native';
 
-class FAQ extends React.Component {
+class Help extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -22,4 +22,4 @@ var styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('FAQComponent', () => FAQ);
+AppRegistry.registerComponent('HelpComponent', () => Help);
