@@ -39,6 +39,7 @@ class NavigationActivity : AppCompatActivity(), BottomNavigationView.OnNavigatio
 
   val OVERLAY_PERMISSION_REQ_CODE = 1
   val HELP_COMPONENT = "HelpComponent"
+  val CURRENCY_INFORMATIONS_COMPONENT = "CurrencyInformationsComponent"
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -79,6 +80,11 @@ class NavigationActivity : AppCompatActivity(), BottomNavigationView.OnNavigatio
       }
       R.id.navigation_help -> {
         val reactFragment = ReactFragment.Builder(HELP_COMPONENT).build()
+        replaceFragment(reactFragment)
+        return true
+      }
+      R.id.navigation_coin -> {
+        val reactFragment = ReactFragment.Builder(CURRENCY_INFORMATIONS_COMPONENT).build()
         replaceFragment(reactFragment)
         return true
       }

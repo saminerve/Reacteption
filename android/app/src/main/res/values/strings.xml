@@ -14,4 +14,5 @@
   <string name="_0_00">1.00</string>
     <string name="permission_system_not_granted">SYSTEM_ALERT_WINDOW permission not granted</string>
     <string name="title_help">Help</string>
+    <string name="title_coin">Coin</string>
 </resources>
