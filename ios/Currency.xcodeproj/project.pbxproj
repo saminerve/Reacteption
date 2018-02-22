@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		78864D22337FCE5BB654061E /* Pods_Currency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E717AC750FF97D127F2FD56 /* Pods_Currency.framework */; };
+		A383FA60203F3F0F00708A3C /* CoinViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383FA5F203F3F0F00708A3C /* CoinViewControllers.swift */; };
 		B8F0BE701F76A5A500ECEF17 /* InitialCurrencyDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B8B6A01E1F715C7800EE194F /* InitialCurrencyDatabase.sqlite */; };
 		B8F0BE711F76A5A500ECEF17 /* InitialCurrencyDatabase.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = B8B6A01D1F715C7800EE194F /* InitialCurrencyDatabase.sqlite-shm */; };
 		B8F0BE721F76A5A500ECEF17 /* InitialCurrencyDatabase.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = B8B6A01C1F715C7800EE194F /* InitialCurrencyDatabase.sqlite-wal */; };
@@ -102,6 +103,7 @@
 		0BADB2657DF718C0739849C7 /* Pods-Currency.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Currency/Pods-Currency.debug.xcconfig"; sourceTree = "<group>"; };
 		1E717AC750FF97D127F2FD56 /* Pods_Currency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Currency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8433CA71619EB07E2995B7D5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A383FA5F203F3F0F00708A3C /* CoinViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinViewControllers.swift; sourceTree = "<group>"; };
 		B84F076D1F7092D800E9E56C /* Currency 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 8.xcdatamodel"; sourceTree = "<group>"; };
 		B8B6A01C1F715C7800EE194F /* InitialCurrencyDatabase.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-wal"; path = "Databases/InitialCurrencyDatabase.sqlite-wal"; sourceTree = "<group>"; };
 		B8B6A01D1F715C7800EE194F /* InitialCurrencyDatabase.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-shm"; path = "Databases/InitialCurrencyDatabase.sqlite-shm"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			children = (
 				BC596A011CCB4F4F003C25FD /* ChangeCurrencyViewController.swift */,
 				BC596A021CCB4F4F003C25FD /* MainViewController.swift */,
+				A383FA5F203F3F0F00708A3C /* CoinViewControllers.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -625,11 +628,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Currency/Pods-Currency-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
+				"${BUILT_PRODUCTS_DIR}/Folly/folly.framework",
+				"${BUILT_PRODUCTS_DIR}/GLog/glog.framework",
+				"${BUILT_PRODUCTS_DIR}/React/React.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+				"${BUILT_PRODUCTS_DIR}/yoga/yoga.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoubleConversion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/folly.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -700,6 +713,7 @@
 				BC596A041CCB4F4F003C25FD /* MainViewController.swift in Sources */,
 				BC5969F91CCB4EFF003C25FD /* CalculatorSwitchButton.swift in Sources */,
 				BC596A031CCB4F4F003C25FD /* ChangeCurrencyViewController.swift in Sources */,
+				A383FA60203F3F0F00708A3C /* CoinViewControllers.swift in Sources */,
 				BCE0A6641C81A4950093AC38 /* CalculatorButton.swift in Sources */,
 				BCD920081C6BA6AC0089F52A /* AppDelegate.swift in Sources */,
 				BC5969F81CCB4EFF003C25FD /* CalculatorSubtractButton.swift in Sources */,

@@ -111,7 +111,7 @@ class MainViewController: UIViewController {
         // Update currencies.
         converter.updateCurrentCurrencies()
     }
-
+    
     @IBAction func digitPressed(_ sender: UIButton) {
         guard let digit = sender.titleLabel?.text else {
             print("Error setting digit value.")
@@ -494,9 +494,7 @@ class MainViewController: UIViewController {
             changeCurrencyViewController.selectedCurrency = converter.outputCurrency.code
             changeCurrencyViewController.delegate = self
         }
-
     }
-
 }
 
 // MARK: - Delegate
