@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppRegistry, StyleSheet, Text, View} from 'react-native';
+import {AppRegistry, StyleSheet, Text, View, Platform} from 'react-native';
 
 class Help extends React.Component {
   render() {
@@ -25,13 +25,27 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: "#2962ff"
+    ...Platform.select({
+      ios: {
+        backgroundColor: 'white',
+      },
+      android: {
+        backgroundColor: '#2962ff',
+      },
+    })
   },
   title: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-    color: 'white'
+    ...Platform.select({
+      ios: {
+        color: '#959595',
+      },
+      android: {
+        color: 'white',
+      },
+    })
   },
 });
 

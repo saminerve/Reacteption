@@ -80,7 +80,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="GBP">
-                                            <color key="titleColor" red="0.58415377140045166" green="0.58426594734191895" blue="0.58413505554199219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeOutputCurrency" id="epB-0k-ch1"/>
@@ -489,7 +489,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-9t-40S">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="PGC-sf-VX3"/>
+                                    <navigationItem title="Title" id="PGC-sf-VX3">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="afm-wO-L39">
+                                            <connections>
+                                                <action selector="cancelPage:" destination="g2k-YT-Ld3" id="f0G-6Q-5a9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiu-ne-yec" userLabel="Container">

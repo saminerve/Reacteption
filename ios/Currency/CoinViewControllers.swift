@@ -31,4 +31,8 @@ class CoinViewController: UIViewController {
         
         self.container.addSubview(rootView)
     }
+    
+    @IBAction func cancelPage(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
